@@ -1,0 +1,27 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color, #ffffff);
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-family-display);
+  transition: transform 0.3s ease;
+}
+
+.logo-text:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 2rem;
+  }
+}

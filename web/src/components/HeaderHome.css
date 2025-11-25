@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.headerHome {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 12px 24px;
+  font-family: 'Quicksand', sans-serif;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+/* Variante sólida para páginas de seção */
+.headerHome--solid {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+  backdrop-filter: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headerHome .left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerHome .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.headerHome .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headerHome {
+    padding: 10px 16px;
+    height: 70px;
+  }
+  
+  .headerHome .title {
+    font-size: 16px;
+  }
+}
+

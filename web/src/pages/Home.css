@@ -1,0 +1,398 @@
+/* Importar fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import '../styles/design-tokens.css';
+@import '../components/HeaderHome.css';
+
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f6f3 0%, var(--secondary-color) 100%);
+  color: var(--primary-color);
+  font-family: var(--font-family-primary);
+}
+
+/* Header estilo Twinli */
+.headerHome {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 12px 24px;
+  font-family: 'Quicksand', sans-serif;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.headerHome .left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.headerHome .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-greeting {
+  color: var(--text-color, #ffffff);
+  font-weight: var(--font-weight-medium);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-primary);
+  letter-spacing: 0.01em;
+}
+
+.btn-admin-panel {
+  padding: 10px;
+  background: var(--primary-color);
+  color: var(--text-color, #ffffff);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+  font-family: var(--font-family-primary);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-admin-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn-admin-panel:hover {
+  background: var(--primary-color-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-admin-panel:hover::before {
+  left: 100%;
+}
+
+.btn-admin-panel:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-logout {
+  padding: 10px;
+  background: rgba(220, 53, 69, 0.95);
+  color: var(--text-color, #ffffff);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+  font-family: var(--font-family-primary);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+
+.btn-logout:hover {
+  background: #c82333;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Conteúdo Principal */
+.home-content {
+  padding: 32px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-family: var(--font-family-display);
+  letter-spacing: -0.02em;
+  line-height: var(--line-height-tight);
+  display: inline-block;
+  width: 100%;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  opacity: 0.7;
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Container de Cursos */
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.course-section {
+  margin-bottom: 40px;
+}
+
+.course-header-info {
+  margin-bottom: 24px;
+}
+
+.course-section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-display);
+  letter-spacing: -0.01em;
+  line-height: var(--line-height-tight);
+}
+
+.course-section-description {
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  font-family: var(--font-family-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Grid de Cards Horizontal */
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--secondary-color);
+}
+
+.cards-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-grid::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+.cards-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.cards-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-dark);
+}
+
+/* Card estilo refinado */
+.card {
+  background: #000;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  min-width: 200px;
+  width: 280px;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.card-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-image-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 58%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.38) 40%, rgba(0,0,0,0.7) 100%);
+  pointer-events: none;
+}
+
+.card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  font-size: 4rem;
+  opacity: 0.8;
+}
+
+.card-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.card-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-family: var(--font-family-primary);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card-subtitle {
+  font-size: var(--font-size-2xl);
+  color: #ffffff;
+  line-height: var(--line-height-tight);
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--primary-color);
+  opacity: 0.6;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 24px 16px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 32px;
+  }
+  
+  .headerHome {
+    padding: 10px 16px;
+    height: 70px;
+  }
+  
+  .headerHome .title {
+    font-size: 16px;
+  }
+  
+  .card {
+    min-width: 180px;
+    width: 240px;
+    height: 320px;
+  }
+  
+  .card-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    min-width: 160px;
+    width: 200px;
+    height: 280px;
+  }
+}

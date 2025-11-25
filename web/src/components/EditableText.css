@@ -1,0 +1,64 @@
+.editable-text-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.editable-text-block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.editable-text-block h1,
+.editable-text-block h2,
+.editable-text-block h3,
+.editable-text-block p {
+  margin: 0;
+  flex: 0 1 auto;
+}
+
+.btn-edit-text {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 4px 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.btn-edit-text:hover {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.editable-text-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.editable-text-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-sm);
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: var(--primary-color);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.editable-text-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 99, 34, 0.1);
+}
+

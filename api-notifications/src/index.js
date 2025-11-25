@@ -512,7 +512,13 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 API de Notificações rodando na porta ${PORT}`);
-});
+// Exportar para Vercel Serverless Functions
+module.exports = app;
+
+// Para desenvolvimento local, iniciar servidor
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 API de Notificações rodando na porta ${PORT}`);
+  });
+}
 
